@@ -1,10 +1,12 @@
 import { Heading } from "@/components/heading"
 import { MaxWidthWrapper } from "@/components/max-width-wrapper"
 import { Check } from "lucide-react"
+
+import { ShinyButton } from "@/components/shiny-button"
 const Page = () => {
   return (
     <>
-      <section className="relative py-24 sm:py-32 bg-brand-25">
+     <section className="relative py-24 sm:py-32 bg-brand-25">
         <MaxWidthWrapper className="text-center">
           <div className="relative mx-auto text-center flex flex-col items-center gap-10">
             <div>
@@ -39,7 +41,14 @@ const Page = () => {
               ))}
             </ul>
 
-          
+            <div className="w-full max-w-80">
+              <ShinyButton
+                href="/sign-up"
+                className="relative z-10 h-14 w-full text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
+              >
+                Start For Free Today
+              </ShinyButton>
+            </div>
           </div>
         </MaxWidthWrapper>
       </section>
