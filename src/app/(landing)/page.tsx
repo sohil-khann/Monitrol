@@ -3,6 +3,7 @@ import { MaxWidthWrapper } from "@/components/max-width-wrapper"
 import { Check } from "lucide-react"
 
 import { ShinyButton } from "@/components/shiny-button"
+import { MockDiscordUI } from "@/components/mock-discord-ui"
 const Page = () => {
   return (
     <>
@@ -57,7 +58,9 @@ const Page = () => {
         <div className="relative mx-auto">
           <MaxWidthWrapper className="relative">
             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-            
+            <MockDiscordUI>
+              
+            </MockDiscordUI>
             </div>
           </MaxWidthWrapper>
         </div>
