@@ -1,9 +1,10 @@
 import { Heading } from "@/components/heading"
 import { MaxWidthWrapper } from "@/components/max-width-wrapper"
 import { Check } from "lucide-react"
-
+import {DiscordMessage} from "@/components/discord-message"
 import { ShinyButton } from "@/components/shiny-button"
 import { MockDiscordUI } from "@/components/mock-discord-ui"
+import { AnimatedList } from "@/components/magicui/animated-list"
 const Page = () => {
   return (
     <>
@@ -59,7 +60,35 @@ const Page = () => {
           <MaxWidthWrapper className="relative">
             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
             <MockDiscordUI>
-              
+              <AnimatedList> <DiscordMessage
+                    avatarSrc="/brand-asset-profile-picture.png"
+                    avatarAlt="MoniTrol Avatar"
+                    username="MoniTrol"
+                    timestamp="Today at 12:35PM"
+                    badgeText="SignUp"
+                    badgeColor="#43b581"
+                    title="👤 New user signed up"
+                    content={{
+                      name: "Mateo Ortiz",
+                      email: "m.ortiz19@gmail.com",
+                    }}
+                  />
+                  <DiscordMessage
+                    avatarSrc="/brand-asset-profile-picture.png"
+                    avatarAlt="MoniTrol Avatar"
+                    username="MoniTrol"
+                    timestamp="Today at 12:35PM"
+                    badgeText="Revenue"
+                    badgeColor="#faa61a"
+                    title="💰 Payment received"
+                    content={{
+                      amount: "$49.00",
+                      email: "zoe.martinez2001@email.com",
+                      plan: "PRO",
+                    }}
+                  />
+                </AnimatedList>
+             
             </MockDiscordUI>
             </div>
           </MaxWidthWrapper>
