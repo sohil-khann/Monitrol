@@ -70,8 +70,8 @@ const Page = () => {
                     badgeColor="#43b581"
                     title="👤 New user signed up"
                     content={{
-                      name: "Mateo Ortiz",
-                      email: "m.ortiz19@gmail.com",
+                      name: "Sohil khan",
+                      email: "sohil9@gmail.com",
                     }}
                   />
                   <DiscordMessage
