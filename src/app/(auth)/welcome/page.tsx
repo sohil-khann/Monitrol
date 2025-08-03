@@ -13,7 +13,7 @@ import { useEffect } from "react"
 const Page = () => {
   const router = useRouter()
 
-  const { data } = useQuery({
+  const { data } = useQuery({ //fetching data query
     queryFn: async () => {
       const res = await client.auth.getDatabaseSyncStatus.$get()
       return await res.json()
