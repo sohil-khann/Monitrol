@@ -12,7 +12,8 @@ import { useState } from "react"
 import { DashboardEmptyState } from "./dashboard-empty-state"
 
 export const DashboardPageContent = () => {
-  const [deletingCategory, setDeletingCategory] = useState<string | null>(null)
+  const [deletingCategory, setDeletingCategory] = 
+  useState<string | null>(null)
   const queryClient = useQueryClient()
 
   const { data: categories, isPending: isEventCategoriesLoading } = useQuery({
@@ -22,6 +23,9 @@ export const DashboardPageContent = () => {
       const { categories } = await res.json()
       return categories
     },
+
+
+
   })
 
   const { mutate: deleteCategory, isPending: isDeletingCategory } = useMutation(
@@ -35,6 +39,11 @@ export const DashboardPageContent = () => {
       },
     }
   )
+
+
+
+
+
 
   if (isEventCategoriesLoading) {
     return (

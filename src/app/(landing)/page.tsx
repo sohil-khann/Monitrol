@@ -16,7 +16,7 @@ const Page = () => {
     category: "sale",
     fields: {
       plan: "PRO",
-      email: "zoe.martinez2001@email.com",
+      email: "sohil.khan2001@email.com",
       amount: 49.00
     }
   }),

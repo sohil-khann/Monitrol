@@ -216,7 +216,7 @@ export const categoryRouter = router({
           }),
       ])
 
-      return c.superjson({
+      return c.superjson({ //it can bandle dates etc.
         events,
         eventsCount,
         uniqueFieldCount,
