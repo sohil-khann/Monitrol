@@ -17,7 +17,7 @@ enum Plan {
 }
 
 model User {
-  id         String  @id @default(cuid())//cuid() is for collision detection
+  id         String  @id @default(cuid())
   externalId String? @unique
 
   quotaLimit Int
@@ -90,7 +90,3 @@ model Quota {
 
   updatedAt DateTime @updatedAt
 }
-
-
-//npx prisma studio
-// npx prisma db push    // for save changes(synchronize our local schema)
