@@ -9,6 +9,7 @@ import Image from "next/image"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 import { Icons } from "@/components/icons"
+
 const Page = () => {
   const codeSnippet = `await fetch("http://localhost:3000/api/v1/events", {
   method: "POST",
@@ -16,7 +17,7 @@ const Page = () => {
     category: "sale",
     fields: {
       plan: "PRO",
-      email: "sohil.khan2001@email.com",
+      email: "zoe.martinez2001@email.com",
       amount: 49.00
     }
   }),
@@ -24,9 +25,10 @@ const Page = () => {
     Authorization: "Bearer <YOUR_API_KEY>"
   }
 })`
+
   return (
     <>
-     <section className="relative py-24 sm:py-32 bg-brand-25">
+      <section className="relative py-24 sm:py-32 bg-brand-25">
         <MaxWidthWrapper className="text-center">
           <div className="relative mx-auto text-center flex flex-col items-center gap-10">
             <div>
@@ -40,7 +42,7 @@ const Page = () => {
             </div>
 
             <p className="text-base/7 text-gray-600 max-w-prose text-center text-pretty">
-              MoniTrol is the easiest way to monitor your SaaS. Get instant
+              PingPanda is the easiest way to monitor your SaaS. Get instant
               notifications for{" "}
               <span className="font-semibold text-gray-700">
                 sales, new users, or any other event
@@ -73,65 +75,61 @@ const Page = () => {
         </MaxWidthWrapper>
       </section>
 
-
-        <section className="relative bg-brand-25 pb-4">
+      <section className="relative bg-brand-25 pb-4">
         <div className="absolute inset-x-0 bottom-24 top-24 bg-brand-700" />
         <div className="relative mx-auto">
           <MaxWidthWrapper className="relative">
             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-            <MockDiscordUI>
-              <AnimatedList> 
-                <DiscordMessage
+              <MockDiscordUI>
+                <AnimatedList>
+                  <DiscordMessage
                     avatarSrc="/brand-asset-profile-picture.png"
-                    avatarAlt="MoniTrol Avatar"
-                    username="MoniTrol"
+                    avatarAlt="PingPanda Avatar"
+                    username="PingPanda"
                     timestamp="Today at 12:35PM"
                     badgeText="SignUp"
                     badgeColor="#43b581"
                     title="👤 New user signed up"
                     content={{
-                      name: "Sohil khan",
-                      email: "sohil9@gmail.com",
+                      name: "Mateo Ortiz",
+                      email: "m.ortiz19@gmail.com",
                     }}
                   />
                   <DiscordMessage
                     avatarSrc="/brand-asset-profile-picture.png"
-                    avatarAlt="MoniTrol Avatar"
-                    username="MoniTrol"
+                    avatarAlt="PingPanda Avatar"
+                    username="PingPanda"
                     timestamp="Today at 12:35PM"
                     badgeText="Revenue"
                     badgeColor="#faa61a"
                     title="💰 Payment received"
                     content={{
                       amount: "$49.00",
-                      email: "com.sohil2001@email.com",
+                      email: "zoe.martinez2001@email.com",
                       plan: "PRO",
                     }}
                   />
                   <DiscordMessage
                     avatarSrc="/brand-asset-profile-picture.png"
-                    avatarAlt="MoniTrol Avatar"
-                    username="MoniTrol"
-                    timestamp="Today at 5:35AM"
-                    badgeText="milestone"
-                    badgeColor="#faa61a"
-                    title="🚀Revenue Milestone Recieved"
+                    avatarAlt="PingPanda Avatar"
+                    username="PingPanda"
+                    timestamp="Today at 5:11AM"
+                    badgeText="Milestone"
+                    badgeColor="#5865f2"
+                    title="🚀 Revenue Milestone Achieved"
                     content={{
-                      recurringRevenue: "$5000",
-                      growth:"+8.2%",
+                      recurringRevenue: "$5.000 USD",
+                      growth: "+8.2%",
                     }}
                   />
                 </AnimatedList>
-             
-            </MockDiscordUI>
+              </MockDiscordUI>
             </div>
           </MaxWidthWrapper>
         </div>
       </section>
 
-
-
-  <section className="relative py-24 sm:py-32 bg-brand-25">
+      <section className="relative py-24 sm:py-32 bg-brand-25">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
             <h2 className="text-center text-base/7 font-semibold text-brand-600">
@@ -180,7 +178,7 @@ const Page = () => {
                     Track Any Event
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                    From new user signups to successful payments, MoniTrol
+                    From new user signups to successful payments, PingPanda
                     notifies you for all critical events in your SaaS.
                   </p>
                 </div>
@@ -236,7 +234,7 @@ const Page = () => {
                     Easy Integration
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                    Connect MoniTrol with your existing workflows in minutes
+                    Connect PingPanda with your existing workflows in minutes
                     and call our intuitive logging API from any language.
                   </p>
                 </div>
@@ -246,7 +244,7 @@ const Page = () => {
                     <div className="flex bg-gray-800/40 ring-1 ring-white/5">
                       <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
                         <div className="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
-                          MoniTrol.js
+                          pingpanda.js
                         </div>
                       </div>
                     </div>
@@ -281,9 +279,8 @@ const Page = () => {
           </div>
         </MaxWidthWrapper>
       </section>
-   
 
-   <section className="relative py-24 sm:py-32 bg-white">
+      <section className="relative py-24 sm:py-32 bg-white">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
             <h2 className="text-center text-base/7 font-semibold text-brand-600">
@@ -304,7 +301,7 @@ const Page = () => {
               </div>
 
               <p className="text-base sm:text-lg lg:text-lg/8 font-medium tracking-tight text-brand-950 text-center lg:text-left text-pretty">
-                MoniTrol has been a game-changer for me. I've been using it for
+                PingPanda has been a game-changer for me. I've been using it for
                 two months now and seeing sales pop up in real-time is super
                 satisfying.
               </p>
@@ -319,10 +316,10 @@ const Page = () => {
                 />
                 <div className="flex flex-col items-center sm:items-start">
                   <p className="font-semibold flex items-center">
-                    Sohil khan
+                    Freya Larsson
                     <Icons.verificationBadge className="size-4 inline-block ml-1.5" />
                   </p>
-                  <p className="text-sm text-gray-600">@Sohil khan</p>
+                  <p className="text-sm text-gray-600">@itsfreya</p>
                 </div>
               </div>
             </div>
@@ -338,7 +335,7 @@ const Page = () => {
               </div>
 
               <p className="text-base sm:text-lg lg:text-lg/8 font-medium tracking-tight text-brand-950 text-center lg:text-left text-pretty">
-                MoniTrol's been paying off for our SaaS. Nice to have simple
+                PingPanda's been paying off for our SaaS. Nice to have simple
                 way to see how we're doing day-to-day. Definitely makes our
                 lives easier.
               </p>
@@ -353,10 +350,10 @@ const Page = () => {
                 />
                 <div className="flex flex-col items-center sm:items-start">
                   <p className="font-semibold flex items-center">
-                    Raj Varshney
+                    Kai Durant
                     <Icons.verificationBadge className="size-4 inline-block ml-1.5" />
                   </p>
-                  <p className="text-sm text-gray-600">@Raj_</p>
+                  <p className="text-sm text-gray-600">@kdurant_</p>
                 </div>
               </div>
             </div>
