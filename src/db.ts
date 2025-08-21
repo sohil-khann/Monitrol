@@ -1,24 +1,23 @@
-import { Pool } from "@neondatabase/serverless"
-import { PrismaNeon } from "@prisma/adapter-neon"
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient } from "@prisma/client";
+import { withAccelerate } from "@prisma/extension-accelerate";
 
+type AcceleratedPrismaClient = PrismaClient & ReturnType<typeof withAccelerate>;
+
+// Define global type for TS (Node global namespace)
 declare global {
-  // eslint-disable-next-line no-var
-  var cachedPrisma: PrismaClient
+  // eslint-disable-next-line no-var, no-unused-vars
+  var cachedPrisma: AcceleratedPrismaClient | undefined;
 }
 
-let prisma: PrismaClient
+let prisma: AcceleratedPrismaClient;
+
 if (process.env.NODE_ENV === "production") {
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL })
-  const adapter = new PrismaNeon(pool)
-  prisma = new PrismaClient({ adapter })
+  prisma = new PrismaClient().$extends(withAccelerate());
 } else {
   if (!global.cachedPrisma) {
-    const pool = new Pool({ connectionString: process.env.DATABASE_URL })
-    const adapter = new PrismaNeon(pool)
-    global.cachedPrisma = new PrismaClient({ adapter })
+    global.cachedPrisma = new PrismaClient().$extends(withAccelerate());
   }
-  prisma = global.cachedPrisma
+  prisma = global.cachedPrisma;
 }
 
-export const db = prisma
+export const db = prisma;

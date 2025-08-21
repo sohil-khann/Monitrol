@@ -7,4 +7,6 @@
 
 export type Bindings = {
   DATABASE_URL: string
+  STRIPE_SECRET_KEY: string
+  NEXT_PUBLIC_APP_URL: string
 }

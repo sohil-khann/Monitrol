@@ -1,17 +1,19 @@
 import Stripe from "stripe"
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "", {
-  apiVersion: "2025-02-24.acacia",
-  typescript: true,
-})
-
 export const createCheckoutSession = async ({
   userEmail,
   userId,
+  env,
 }: {
   userEmail: string
   userId: string
+  env: { STRIPE_SECRET_KEY: string; NEXT_PUBLIC_APP_URL: string }
 }) => {
+  const stripe = new Stripe(env.STRIPE_SECRET_KEY ?? "", {
+    apiVersion: "2025-02-24.acacia",
+    typescript: true,
+  })
+
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
