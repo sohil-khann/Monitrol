@@ -3,9 +3,18 @@ Link : https://monitrol.vercel.app/
 # Monitrol - Event Monitoring SaaS
 
 ![Dashboard Screenshot](/public/moni01.png)
+
 ![Dashboard Screenshot](/public/moni02.png)
+
 ![Dashboard Screenshot](/public/moni03.png)
+
 ![Dashboard Screenshot](/public/moni04.png)
+
+![Dashboard Screenshot](/public/moni05.png)
+
+ ## Discord messages
+
+![Dashboard Screenshot](/public/moni06.png)
 
 
 
