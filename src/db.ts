@@ -12,10 +12,12 @@ declare global {
 let prisma: AcceleratedPrismaClient;
 
 if (process.env.NODE_ENV === "production") {
-  prisma = new PrismaClient().$extends(withAccelerate());
+  prisma = new PrismaClient() as AcceleratedPrismaClient;
+  prisma.$extends(withAccelerate());
 } else {
   if (!global.cachedPrisma) {
-    global.cachedPrisma = new PrismaClient().$extends(withAccelerate());
+    global.cachedPrisma = new PrismaClient() as AcceleratedPrismaClient;
+    global.cachedPrisma.$extends(withAccelerate());
   }
   prisma = global.cachedPrisma;
 }

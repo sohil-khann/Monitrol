@@ -11,6 +11,17 @@ import Link from "next/link"
 import { useState } from "react"
 import { DashboardEmptyState } from "./dashboard-empty-state"
 
+interface Category {
+  id: string;
+  name: string;
+  color?: number;
+  emoji?: string;
+  createdAt: Date;
+  lastPing?: Date;
+  uniqueFieldCount?: number;
+  eventsCount?: number;
+}
+
 export const DashboardPageContent = () => {
   const [deletingCategory, setDeletingCategory] = useState<string | null>(null)
   const queryClient = useQueryClient()
@@ -51,16 +62,7 @@ export const DashboardPageContent = () => {
   return (
     <>
       <ul className="grid max-w-6xl grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-        {categories.map((category: {
-          id: string;
-          name: string;
-          color?: number;
-          emoji?: string;
-          createdAt: Date;
-          lastPing?: Date;
-          uniqueFieldCount?: number;
-          eventsCount?: number;
-        }) => (
+        {categories.map((category: Category) => (
           <li
             key={category.id}
             className="relative group z-10 transition-all duration-200 hover:-translate-y-0.5"

@@ -10,8 +10,8 @@ export const paymentRouter = router({
       userEmail: user.email,
       userId: user.id,
       env: {
-        STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY!,
-        NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL!
+        STRIPE_SECRET_KEY: c.env.STRIPE_SECRET_KEY,
+      NEXT_PUBLIC_APP_URL: c.env.NEXT_PUBLIC_APP_URL
       },
     })
 
