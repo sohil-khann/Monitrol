@@ -2,8 +2,14 @@
 Link : https://monitrol.vercel.app/
 # Monitrol - Event Monitoring SaaS
 
-![Dashboard Screenshot](/public/phone-screen.png)
-![Bento UI Screenshot](/public/bento-any-event.png)
+![Dashboard Screenshot](/public/moni01.png)
+![Dashboard Screenshot](/public/moni02.png)
+![Dashboard Screenshot](/public/moni03.png)
+![Dashboard Screenshot](/public/moni04.png)
+
+
+
+
 
 Monitrol is a complete SaaS platform built with modern web technologies for monitoring and managing events in real-time.
 
