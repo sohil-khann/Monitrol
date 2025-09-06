@@ -54,6 +54,17 @@ export const POST = async (req: NextRequest) => {
       )
     }
 
+    // Validate Discord ID format (should be numeric and 17-19 digits)
+    const discordIdRegex = /^\d{17,19}$/
+    if (!discordIdRegex.test(user.discordId)) {
+      return NextResponse.json(
+        {
+          message: "Invalid Discord ID format. Please check your Discord ID in account settings",
+        },
+        { status: 400 }
+      )
+    }
+
     // ACTUAL LOGIC
     const currentData = new Date()
     const currentMonth = currentData.getMonth() + 1
@@ -84,9 +95,25 @@ export const POST = async (req: NextRequest) => {
       )
     }
 
+    if (!process.env.DISCORD_BOT_TOKEN) {
+      return NextResponse.json(
+        { message: "Discord bot token not configured" },
+        { status: 500 }
+      )
+    }
+
     const discord = new DiscordClient(process.env.DISCORD_BOT_TOKEN)
 
-    const dmChannel = await discord.createDM(user.discordId)
+    let dmChannel
+    try {
+      dmChannel = await discord.createDM(user.discordId)
+    } catch (error) {
+      console.error("Failed to create Discord DM:", error)
+      return NextResponse.json(
+        { message: "Failed to create Discord DM. Please check your Discord ID" },
+        { status: 400 }
+      )
+    }
 
     let requestData: unknown
 
@@ -147,7 +174,12 @@ export const POST = async (req: NextRequest) => {
     })
 
     try {
-      await discord.sendEmbed(dmChannel.id, eventData)
+      try {
+        await discord.sendEmbed(dmChannel.id, eventData)
+      } catch (error) {
+        console.error("Failed to send Discord notification:", error)
+        // Don't fail the entire request if Discord notification fails
+      }
 
       await db.event.update({
         where: { id: event.id },
